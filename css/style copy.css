@@ -1,0 +1,45 @@
+body {
+  background-color: #edebc4;
+}
+h1 {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: arial;
+  text-transform: uppercase;
+}
+
+
+
+/* start iphone flip */
+
+.mg-flip-container {
+  perspective:1000px;
+}
+.mg-flip-container:hover .mg-flip-content,
+.mg-flip-container.hover .mg-flip-content {
+  transform:rotateY(180deg);
+}
+.mg-flip-container,.front-side,.back-side {
+  width: 277px;
+  height: 503px;
+}
+.mg-flip-content {
+  transition:.6s; /* Flip duration */
+  transform-style:preserve-3d;
+  position:relative;
+}
+.front-side,
+.back-side {
+  backface-visibility:hidden;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.front-side {
+  z-index:2;
+  transform:rotateY(0deg);
+}
+.back-side {
+  transform:rotateY(180deg);
+}
